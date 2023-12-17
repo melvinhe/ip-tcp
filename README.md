@@ -3,7 +3,7 @@
 ![TCP state transitions](https://github.com/melvinhe/ip-tcp/assets/64095665/8864fb2d-a156-41f7-ba8a-b36aef26cf2e)
 
 
-## How you abstract your link layer and its interfaces
+## Abstracting link layer and its interfaces
 
 In our implementation, we abstracted the link layer and its interfaces mainly through our use of 'ipapi'. Here are some examples on how the link layer and its interfaces are abstracted:
 
@@ -15,7 +15,7 @@ In our implementation, we abstracted the link layer and its interfaces mainly th
 
 - Forward Table: The Forward_table data structure manages routing information and can be seen as an abstraction of the link layer's routing table. It contains entries that map network prefixes to the next-hop IP addresses and the corresponding outgoing interfaces. This is updated by RIP if RIP is being used.
 
-## The thread model for your RIP implementation
+## The thread model for our RIP implementation
 
 Our RIP implementation in the provided code follows a simple thread model. Key elements of the thread model include:
 
