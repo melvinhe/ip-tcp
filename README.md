@@ -91,9 +91,11 @@ When one side decides to close the connection, it will wait until it has sent al
 
 Whenever the other side recieves the FIN packet, it will ACK the packet and send a FIN. As was posted on EdStem, once a connection sends a FIN packet, it will no longer add information to its recieve buffer. Therefore, we do not send any more data from our send buffer after recieving a FIN, even if our send buffer is not empty. Instead, we go straight to terminating the connection by sending a FIN. This FIN is also added to the retransmission queue.
 
-We then proceed based on the [TCP state transitions](https://commons.wikimedia.org/wiki/File:Tcp_state_diagram_fixed_new.svg). Generally, the side that sends the FIN initially will go through the states FIN_WAIT_1, FIN_WAIT_2, TIME_WAIT and then finally become CLOSED. The other side will go from CLOSE_WAIT to LAST_ACK to CLOSED.
+We then proceed based on the TCP state transitions in diagram below. Generally, the side that sends the FIN initially will go through the states FIN_WAIT_1, FIN_WAIT_2, TIME_WAIT and then finally become CLOSED. The other side will go from CLOSE_WAIT to LAST_ACK to CLOSED.
 
 When a connection is closed, it is removed from the TCP API and will no longer be shown when the command *ls* is entered into the terminal.
+
+![TCP state transitions](https://github.com/melvinhe/ip-tcp/assets/64095665/8864fb2d-a156-41f7-ba8a-b36aef26cf2e)
 
 ### Wireshark Capture
 
